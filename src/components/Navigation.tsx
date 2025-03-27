@@ -19,60 +19,18 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link } from "react-router-dom";
-
-const productItems = [
-  {
-    title: "人工智能服务",
-    description: "借助先进AI技术助力企业数字化转型",
-    href: "/services/ai",
-    icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">AI</div>
-  },
-  {
-    title: "软件开发",
-    description: "定制化软件解决方案，满足您的业务需求",
-    href: "/services/software",
-    icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">软</div>
-  },
-  {
-    title: "技术咨询",
-    description: "为您提供专业的技术咨询和战略规划",
-    href: "/services/consulting",
-    icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">咨</div>
-  },
-  {
-    title: "数据服务",
-    description: "全面的数据分析和挖掘服务",
-    href: "/services/data",
-    icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">数</div>
-  },
-];
-
-const solutionItems = [
-  {
-    title: "金融科技",
-    description: "为金融行业提供创新技术解决方案",
-    href: "/solutions/fintech",
-  },
-  {
-    title: "医疗健康",
-    description: "利用AI技术优化医疗服务和健康管理",
-    href: "/solutions/healthcare",
-  },
-  {
-    title: "智慧教育",
-    description: "打造数字化、智能化的教育体验",
-    href: "/solutions/education",
-  },
-  {
-    title: "智慧城市",
-    description: "构建连接、高效、可持续的智慧城市生态",
-    href: "/solutions/smart-city",
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -81,6 +39,82 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const productItems = [
+    {
+      title: t('services.ai'),
+      description: language === 'zh' 
+        ? "借助先进AI技术助力企业数字化转型" 
+        : "Empower enterprise digital transformation with advanced AI technology",
+      href: "/services/ai",
+      icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">AI</div>
+    },
+    {
+      title: t('services.software'),
+      description: language === 'zh' 
+        ? "定制化软件解决方案，满足您的业务需求"
+        : "Customized software solutions to meet your business needs",
+      href: "/services/software",
+      icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+        {language === 'zh' ? '软' : 'SW'}
+      </div>
+    },
+    {
+      title: t('services.consulting'),
+      description: language === 'zh' 
+        ? "为您提供专业的技术咨询和战略规划"
+        : "Professional technical consulting and strategic planning",
+      href: "/services/consulting",
+      icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+        {language === 'zh' ? '咨' : 'CS'}
+      </div>
+    },
+    {
+      title: t('services.data'),
+      description: language === 'zh' 
+        ? "全面的数据分析和挖掘服务"
+        : "Comprehensive data analytics and mining services",
+      href: "/services/data",
+      icon: <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+        {language === 'zh' ? '数' : 'DT'}
+      </div>
+    },
+  ];
+
+  const solutionItems = [
+    {
+      title: t('solutions.fintech'),
+      description: language === 'zh' 
+        ? "为金融行业提供创新技术解决方案"
+        : "Innovative technology solutions for the financial industry",
+      href: "/solutions/fintech",
+    },
+    {
+      title: t('solutions.healthcare'),
+      description: language === 'zh' 
+        ? "利用AI技术优化医疗服务和健康管理"
+        : "Optimize healthcare services and health management with AI technology",
+      href: "/solutions/healthcare",
+    },
+    {
+      title: t('solutions.education'),
+      description: language === 'zh' 
+        ? "打造数字化、智能化的教育体验"
+        : "Create a digital, intelligent educational experience",
+      href: "/solutions/education",
+    },
+    {
+      title: t('solutions.smartcity'),
+      description: language === 'zh' 
+        ? "构建连接、高效、可持续的智慧城市生态"
+        : "Build connected, efficient, and sustainable smart city ecosystems",
+      href: "/solutions/smart-city",
+    },
+  ];
+
+  const handleLanguageChange = (lang: 'zh' | 'en') => {
+    setLanguage(lang);
+  };
 
   return (
     <header
@@ -96,7 +130,9 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-display font-bold text-primary">西江鼎科技</span>
+              <span className="text-2xl font-display font-bold text-primary">
+                {language === 'zh' ? '西江鼎科技' : 'Xijiang Tech'}
+              </span>
             </Link>
           </div>
 
@@ -105,7 +141,7 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">产品服务</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent">{t('nav.services')}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-4 grid grid-cols-2 gap-3">
                       {productItems.map((item) => (
@@ -126,7 +162,7 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">解决方案</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent">{t('nav.solutions')}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-4 grid grid-cols-2 gap-3">
                       {solutionItems.map((item) => (
@@ -148,30 +184,32 @@ const Navigation = () => {
                     <NavigationMenuLink 
                       className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-base font-medium transition-colors hover:bg-muted/50 focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                     >
-                      关于我们
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-                
-                <NavigationMenuItem>
-                  <Link to="/news">
-                    <NavigationMenuLink 
-                      className="group inline-flex h-10 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-base font-medium transition-colors hover:bg-muted/50 focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                    >
-                      新闻动态
+                      {t('nav.about')}
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
             
-            <Button variant="ghost" className="flex items-center gap-1">
-              <Globe className="w-4 h-4 mr-1" />
-              中文 <ChevronDown className="w-3 h-3 ml-1" />
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="flex items-center gap-1">
+                  <Globe className="w-4 h-4 mr-1" />
+                  {language === 'zh' ? '中文' : 'English'} <ChevronDown className="w-3 h-3 ml-1" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => handleLanguageChange('zh')}>
+                  中文
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleLanguageChange('en')}>
+                  English
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             
             <Link to="/contact">
-              <Button>联系我们</Button>
+              <Button>{t('nav.contact')}</Button>
             </Link>
           </div>
 
@@ -200,7 +238,9 @@ const Navigation = () => {
       )}>
         <div className="flex flex-col h-full pt-20 pb-6 px-4 overflow-y-auto">
           <div className="space-y-1 mb-6">
-            <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">产品服务</div>
+            <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">
+              {t('nav.services')}
+            </div>
             {productItems.map((item) => (
               <Link 
                 key={item.href} 
@@ -215,7 +255,9 @@ const Navigation = () => {
           </div>
 
           <div className="space-y-1 mb-6">
-            <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">解决方案</div>
+            <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">
+              {t('nav.solutions')}
+            </div>
             {solutionItems.map((item) => (
               <Link 
                 key={item.href} 
@@ -235,34 +277,36 @@ const Navigation = () => {
               className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
-              关于我们
-            </Link>
-            <Link 
-              to="/news" 
-              className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              新闻动态
+              {t('nav.about')}
             </Link>
           </div>
 
           <div className="mt-auto space-y-4">
-            <div className="flex items-center justify-between p-3 border rounded-lg">
-              <div className="flex items-center">
-                <Globe className="w-5 h-5 mr-2 text-muted-foreground" />
-                <span>中文</span>
-              </div>
-              <ChevronDown className="w-4 h-4 text-muted-foreground" />
+            <div className="grid grid-cols-2 gap-2">
+              <Button
+                variant={language === 'zh' ? 'default' : 'outline'}
+                className="w-full justify-center"
+                onClick={() => handleLanguageChange('zh')}
+              >
+                中文
+              </Button>
+              <Button
+                variant={language === 'en' ? 'default' : 'outline'}
+                className="w-full justify-center"
+                onClick={() => handleLanguageChange('en')}
+              >
+                English
+              </Button>
             </div>
             
             <div className="grid grid-cols-2 gap-3">
               <Button variant="outline" className="w-full justify-start">
                 <Phone className="w-4 h-4 mr-2" />
-                电话咨询
+                {t('common.phoneConsult')}
               </Button>
               <Button className="w-full justify-start">
                 <MessageSquare className="w-4 h-4 mr-2" />
-                在线咨询
+                {t('common.onlineConsult')}
               </Button>
             </div>
           </div>
