@@ -129,8 +129,13 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2">
-              <span className="text-2xl font-display font-bold text-primary">
+            <Link to="/" className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/6486875d-ecb7-4cf9-8884-9eda54f7f55e.png" 
+                alt="西江鼎科技" 
+                className="h-10 w-auto" 
+              />
+              <span className="text-2xl font-display font-bold">
                 {language === 'zh' ? '西江鼎科技' : 'Xijiang Tech'}
               </span>
             </Link>
@@ -237,6 +242,14 @@ const Navigation = () => {
         mobileMenuOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="flex flex-col h-full pt-20 pb-6 px-4 overflow-y-auto">
+          <div className="flex items-center justify-center mb-8">
+            <img 
+              src="/lovable-uploads/6486875d-ecb7-4cf9-8884-9eda54f7f55e.png" 
+              alt="西江鼎科技" 
+              className="h-12 w-auto" 
+            />
+          </div>
+          
           <div className="space-y-1 mb-6">
             <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">
               {t('nav.services')}
