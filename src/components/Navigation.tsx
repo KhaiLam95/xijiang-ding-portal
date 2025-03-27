@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -129,15 +128,12 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3">
+            <Link to="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/6486875d-ecb7-4cf9-8884-9eda54f7f55e.png" 
                 alt="西江鼎科技" 
                 className="h-10 w-auto" 
               />
-              <span className="text-2xl font-display font-bold">
-                {language === 'zh' ? '西江鼎科技' : 'Xijiang Tech'}
-              </span>
             </Link>
           </div>
 
