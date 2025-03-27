@@ -11,6 +11,18 @@ import Services from "./pages/Services";
 import Solutions from "./pages/Solutions";
 import NotFound from "./pages/NotFound";
 
+// Service detail pages
+import AIService from "./pages/services/AIService";
+import SoftwareService from "./pages/services/SoftwareService";
+import ConsultingService from "./pages/services/ConsultingService";
+import DataService from "./pages/services/DataService";
+
+// Solution detail pages
+import FintechSolution from "./pages/solutions/FintechSolution";
+import HealthcareSolution from "./pages/solutions/HealthcareSolution";
+import EducationSolution from "./pages/solutions/EducationSolution";
+import SmartCitySolution from "./pages/solutions/SmartCitySolution";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,6 +37,19 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/solutions" element={<Solutions />} />
+            
+            {/* Service detail routes */}
+            <Route path="/services/ai" element={<AIService />} />
+            <Route path="/services/software" element={<SoftwareService />} />
+            <Route path="/services/consulting" element={<ConsultingService />} />
+            <Route path="/services/data" element={<DataService />} />
+            
+            {/* Solution detail routes */}
+            <Route path="/solutions/fintech" element={<FintechSolution />} />
+            <Route path="/solutions/healthcare" element={<HealthcareSolution />} />
+            <Route path="/solutions/education" element={<EducationSolution />} />
+            <Route path="/solutions/smartcity" element={<SmartCitySolution />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

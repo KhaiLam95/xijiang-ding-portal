@@ -93,7 +93,7 @@ const Solutions = () => {
                   <ul className="space-y-2 mb-6">
                     {solution.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start">
-                        <div className="mr-2 mt-1 text-primary">•</div>
+                        <div className="mr-2 mt-1 text-accent">•</div>
                         <p>{feature}</p>
                       </li>
                     ))}
