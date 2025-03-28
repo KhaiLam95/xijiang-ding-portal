@@ -176,7 +176,7 @@ const translations = {
     // Testimonial Section
     'testimonials.title': 'Client Testimonials',
     'testimonials.subtitle': 'What Our Clients Say',
-    'testimonials.description': 'Our clients have highly praised Xijiang Tech's services and solutions. These authentic feedbacks drive us to continuously improve.',
+    'testimonials.description': "Our clients have highly praised Xijiang Tech's services and solutions. These authentic feedbacks drive us to continuously improve.",
   }
 };
 

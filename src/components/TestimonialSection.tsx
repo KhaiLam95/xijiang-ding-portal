@@ -140,7 +140,7 @@ const TestimonialSection = () => {
           <p className="mt-4 text-lg text-muted-foreground">
             {language === 'zh' 
               ? '我们的客户对西江鼎科技的服务和解决方案给予了高度评价，这些真实的反馈是我们不断前进的动力。'
-              : 'Our clients have highly praised Xijiang Tech's services and solutions. These authentic feedbacks drive us to continuously improve.'}
+              : "Our clients have highly praised Xijiang Tech's services and solutions. These authentic feedbacks drive us to continuously improve."}
           </p>
         </div>
 
