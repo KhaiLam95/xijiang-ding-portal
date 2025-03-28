@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, ChevronRight, Play } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -32,15 +32,13 @@ const HeroSection = () => {
             西江鼎科技致力于提供创新的人工智能、软件开发与技术服务，帮助企业实现数字化转型，打造智能化未来。
           </p>
 
-          <div className="mt-8 flex animate-fade-in-up flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-            <Button size="lg" className="group">
-              预约演示
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button variant="outline" size="lg" className="group">
-              <Play className="mr-2 h-4 w-4" />
-              观看视频介绍
-            </Button>
+          <div className="mt-8 animate-fade-in-up">
+            <Link to="/contact">
+              <Button size="lg" className="group">
+                预约演示
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
           </div>
 
           <div className="mt-12 animate-fade-in grid grid-cols-2 gap-4 sm:grid-cols-4 md:mt-16">

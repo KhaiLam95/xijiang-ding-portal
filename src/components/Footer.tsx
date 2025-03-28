@@ -1,12 +1,10 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { 
   Phone, 
   Mail, 
   MapPin, 
-  ArrowRight, 
   Github, 
   Twitter, 
   Linkedin, 
@@ -22,7 +20,7 @@ const Footer = () => {
   return (
     <footer className="bg-secondary/50 border-t">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <Link to="/" className="inline-block">
               <span className="text-2xl font-display font-bold text-primary">
@@ -101,23 +99,6 @@ const Footer = () => {
                 </span>
               </li>
             </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-medium mb-4">{t('footer.subscribe')}</h3>
-            <p className="text-muted-foreground mb-4">
-              {t('footer.subscribeDesc')}
-            </p>
-            <div className="flex space-x-2">
-              <Input 
-                type="email" 
-                placeholder={t('footer.yourEmail')} 
-                className="bg-background/50"
-              />
-              <Button size="icon">
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </div>
           </div>
         </div>
         

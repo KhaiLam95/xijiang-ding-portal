@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Solutions from "./pages/Solutions";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 // Service detail pages
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/solutions" element={<Solutions />} />
+            <Route path="/contact" element={<Contact />} />
             
             {/* Service detail routes */}
             <Route path="/services/ai" element={<AIService />} />
