@@ -1,5 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LogoProps {
   name: string;
@@ -17,10 +18,12 @@ const Logo = ({ name, className }: LogoProps) => {
 };
 
 const ClientSection = () => {
-  const logos = [
-    "华为", "阿里巴巴", "腾讯", "百度", "京东", 
-    "字节跳动", "小米", "网易", "美团", "滴滴"
-  ];
+  const { language } = useLanguage();
+  
+  const zhLogos = ["华为", "阿里巴巴", "腾讯", "百度", "京东", "字节跳动", "小米", "网易", "美团", "滴滴"];
+  const enLogos = ["Huawei", "Alibaba", "Tencent", "Baidu", "JD", "ByteDance", "Xiaomi", "NetEase", "Meituan", "DiDi"];
+  
+  const logos = language === 'zh' ? zhLogos : enLogos;
 
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -51,12 +54,16 @@ const ClientSection = () => {
     <div className="border-y bg-muted/30 py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-gradient text-base font-semibold">我们的客户</h2>
+          <h2 className="text-gradient text-base font-semibold">
+            {language === 'zh' ? '我们的客户' : 'Our Clients'}
+          </h2>
           <h3 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-            值得信赖的合作伙伴
+            {language === 'zh' ? '值得信赖的合作伙伴' : 'Trusted Partners'}
           </h3>
           <p className="mt-4 text-lg text-muted-foreground">
-            我们的解决方案已成功助力众多行业领先企业实现数字化转型和业务增长。
+            {language === 'zh' 
+              ? '我们的解决方案已成功助力众多行业领先企业实现数字化转型和业务增长。'
+              : 'Our solutions have successfully helped many industry-leading companies achieve digital transformation and business growth.'}
           </p>
         </div>
 

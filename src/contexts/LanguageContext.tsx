@@ -50,6 +50,7 @@ const translations = {
     'common.contactUs': '联系我们',
     'common.phoneConsult': '电话咨询',
     'common.onlineConsult': '在线咨询',
+    'common.bookDemo': '预约演示',
     
     // CTA section
     'cta.title': '准备好开启数字化转型了吗？',
@@ -59,6 +60,39 @@ const translations = {
     
     // QR Code
     'qr.scanToConsult': '扫码咨询',
+    
+    // Hero Section
+    'hero.newTag': '新上线',
+    'hero.newDesc': '探索我们全新的人工智能解决方案',
+    'hero.title1': '科技创新',
+    'hero.title2': '驱动数字化转型',
+    'hero.description': '西江鼎科技致力于提供创新的人工智能、软件开发与技术服务，帮助企业实现数字化转型，打造智能化未来。',
+    'hero.bookDemo': '预约演示',
+    'hero.stats.years': '年行业经验',
+    'hero.stats.clients': '企业客户',
+    'hero.stats.patents': '技术专利',
+    'hero.stats.satisfaction': '客户满意度',
+    
+    // Feature Section
+    'features.title': '我们的服务',
+    'features.subtitle': '全方位的科技解决方案',
+    'features.description': '我们提供从人工智能到软件开发的全面技术服务，助力企业数字化转型，提升市场竞争力。',
+    
+    // Solution Section
+    'solutions.title': '行业解决方案',
+    'solutions.subtitle': '为各行业量身定制的技术方案',
+    'solutions.description': '我们深入理解各行业痛点，提供专业化、个性化的解决方案，满足不同行业的特定需求。',
+    'solutions.learnMore': '了解更多',
+    
+    // Client Section
+    'clients.title': '我们的客户',
+    'clients.subtitle': '值得信赖的合作伙伴',
+    'clients.description': '我们的解决方案已成功助力众多行业领先企业实现数字化转型和业务增长。',
+    
+    // Testimonial Section
+    'testimonials.title': '客户评价',
+    'testimonials.subtitle': '听听客户怎么说',
+    'testimonials.description': '我们的客户对西江鼎科技的服务和解决方案给予了高度评价，这些真实的反馈是我们不断前进的动力。',
   },
   en: {
     // Navigation
@@ -100,6 +134,7 @@ const translations = {
     'common.contactUs': 'Contact Us',
     'common.phoneConsult': 'Phone Consultation',
     'common.onlineConsult': 'Online Consultation',
+    'common.bookDemo': 'Book a Demo',
     
     // CTA section
     'cta.title': 'Ready to start your digital transformation?',
@@ -109,6 +144,39 @@ const translations = {
     
     // QR Code
     'qr.scanToConsult': 'Scan to Consult',
+    
+    // Hero Section
+    'hero.newTag': 'New',
+    'hero.newDesc': 'Explore our new AI solutions',
+    'hero.title1': 'Tech Innovation',
+    'hero.title2': 'Driving Digital Transformation',
+    'hero.description': 'Xijiang Tech is committed to providing innovative AI, software development, and technical services to help enterprises achieve digital transformation and create an intelligent future.',
+    'hero.bookDemo': 'Book a Demo',
+    'hero.stats.years': 'Years Experience',
+    'hero.stats.clients': 'Enterprise Clients',
+    'hero.stats.patents': 'Tech Patents',
+    'hero.stats.satisfaction': 'Client Satisfaction',
+    
+    // Feature Section
+    'features.title': 'Our Services',
+    'features.subtitle': 'Comprehensive Technology Solutions',
+    'features.description': 'We provide comprehensive technical services from artificial intelligence to software development, helping enterprises in digital transformation and enhancing market competitiveness.',
+    
+    // Solution Section
+    'solutions.title': 'Industry Solutions',
+    'solutions.subtitle': 'Customized Technical Solutions for Various Industries',
+    'solutions.description': 'We deeply understand the pain points of various industries and provide professional, personalized solutions to meet the specific needs of different sectors.',
+    'solutions.learnMore': 'Learn More',
+    
+    // Client Section
+    'clients.title': 'Our Clients',
+    'clients.subtitle': 'Trusted Partners',
+    'clients.description': 'Our solutions have successfully helped many industry-leading companies achieve digital transformation and business growth.',
+    
+    // Testimonial Section
+    'testimonials.title': 'Client Testimonials',
+    'testimonials.subtitle': 'What Our Clients Say',
+    'testimonials.description': 'Our clients have highly praised Xijiang Tech's services and solutions. These authentic feedbacks drive us to continuously improve.',
   }
 };
 

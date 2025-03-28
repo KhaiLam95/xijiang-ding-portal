@@ -11,6 +11,7 @@ import {
   Layers
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FeatureCardProps {
   icon: React.ReactNode;
@@ -35,7 +36,9 @@ const FeatureCard = ({ icon, title, description, className }: FeatureCardProps) 
 };
 
 const FeatureSection = () => {
-  const features = [
+  const { language } = useLanguage();
+  
+  const features = language === 'zh' ? [
     {
       icon: <BrainCircuit className="h-6 w-6" />,
       title: "人工智能技术",
@@ -76,18 +79,63 @@ const FeatureSection = () => {
       title: "系统集成",
       description: "整合各类技术资源，实现系统间的无缝连接，提升整体运营效能。"
     },
+  ] : [
+    {
+      icon: <BrainCircuit className="h-6 w-6" />,
+      title: "Artificial Intelligence",
+      description: "Utilizing advanced AI technology to provide intelligent solutions for businesses, optimize workflows and improve productivity."
+    },
+    {
+      icon: <Code2 className="h-6 w-6" />,
+      title: "Software Development",
+      description: "Providing customized software development services to meet specific business needs and enhance operational efficiency."
+    },
+    {
+      icon: <LineChart className="h-6 w-6" />,
+      title: "Data Analytics",
+      description: "Deep mining of data value, helping enterprises make smarter decisions through data analysis."
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Cybersecurity",
+      description: "Providing comprehensive cybersecurity solutions to protect core enterprise data and information assets."
+    },
+    {
+      icon: <Smartphone className="h-6 w-6" />,
+      title: "Mobile App Development",
+      description: "Building high-performance, user-friendly mobile applications to connect businesses with customers."
+    },
+    {
+      icon: <Clock className="h-6 w-6" />,
+      title: "Agile Development",
+      description: "Adopting agile development methods to respond quickly to changing requirements and shorten time-to-market."
+    },
+    {
+      icon: <Zap className="h-6 w-6" />,
+      title: "Technical Consulting",
+      description: "Providing professional technical consulting services to help enterprises formulate scientific technology strategies and development plans."
+    },
+    {
+      icon: <Layers className="h-6 w-6" />,
+      title: "System Integration",
+      description: "Integrating various technology resources to achieve seamless connection between systems and improve overall operational efficiency."
+    },
   ];
 
   return (
     <div className="bg-gradient-to-b from-background to-secondary/30 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-gradient text-base font-semibold">我们的服务</h2>
+          <h2 className="text-gradient text-base font-semibold">
+            {language === 'zh' ? '我们的服务' : 'Our Services'}
+          </h2>
           <h3 className="mt-2 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-            全方位的科技解决方案
+            {language === 'zh' ? '全方位的科技解决方案' : 'Comprehensive Technology Solutions'}
           </h3>
           <p className="mt-4 text-lg text-muted-foreground">
-            我们提供从人工智能到软件开发的全面技术服务，助力企业数字化转型，提升市场竞争力。
+            {language === 'zh' 
+              ? '我们提供从人工智能到软件开发的全面技术服务，助力企业数字化转型，提升市场竞争力。'
+              : 'We provide comprehensive technical services from artificial intelligence to software development, helping enterprises in digital transformation and enhancing market competitiveness.'}
           </p>
         </div>
 
