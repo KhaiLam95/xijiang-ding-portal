@@ -50,6 +50,15 @@ const translations = {
     'common.contactUs': '联系我们',
     'common.phoneConsult': '电话咨询',
     'common.onlineConsult': '在线咨询',
+    
+    // CTA section
+    'cta.title': '准备好开启数字化转型了吗？',
+    'cta.description': '联系我们，了解西江鼎科技如何帮助您的企业实现创新发展，提升竞争力。我们的专业团队随时为您提供咨询和支持。',
+    'cta.appointment': '预约咨询',
+    'cta.phone': '400-888-8888',
+    
+    // QR Code
+    'qr.scanToConsult': '扫码咨询',
   },
   en: {
     // Navigation
@@ -91,6 +100,15 @@ const translations = {
     'common.contactUs': 'Contact Us',
     'common.phoneConsult': 'Phone Consultation',
     'common.onlineConsult': 'Online Consultation',
+    
+    // CTA section
+    'cta.title': 'Ready to start your digital transformation?',
+    'cta.description': 'Contact us to learn how Xijiang Tech can help your business innovate and improve competitiveness. Our professional team is ready to provide consultation and support.',
+    'cta.appointment': 'Book a Consultation',
+    'cta.phone': '400-888-8888',
+    
+    // QR Code
+    'qr.scanToConsult': 'Scan to Consult',
   }
 };
 

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -107,7 +108,7 @@ const Navigation = () => {
       description: language === 'zh' 
         ? "构建连接、高效、可持续的智慧城市生态"
         : "Build connected, efficient, and sustainable smart city ecosystems",
-      href: "/solutions/smart-city",
+      href: "/solutions/smartcity",
     },
   ];
 
@@ -142,7 +143,7 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">{t('nav.services')}</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-base">{t('nav.services')}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-4 grid grid-cols-2 gap-3">
                       {productItems.map((item) => (
@@ -163,7 +164,7 @@ const Navigation = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">{t('nav.solutions')}</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-base">{t('nav.solutions')}</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[500px] p-4 grid grid-cols-2 gap-3">
                       {solutionItems.map((item) => (
@@ -194,7 +195,7 @@ const Navigation = () => {
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center gap-1">
+                <Button variant="ghost" className="flex items-center gap-1 text-base">
                   <Globe className="w-4 h-4 mr-1" />
                   {language === 'zh' ? '中文' : 'English'} <ChevronDown className="w-3 h-3 ml-1" />
                 </Button>
@@ -210,7 +211,7 @@ const Navigation = () => {
             </DropdownMenu>
             
             <Link to="/contact">
-              <Button>{t('nav.contact')}</Button>
+              <Button className="text-base">{t('nav.contact')}</Button>
             </Link>
           </div>
 

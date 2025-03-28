@@ -2,9 +2,11 @@
 import React, { useState } from 'react';
 import { MessageSquare, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FloatingQRCode = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="fixed bottom-6 right-6 z-50">
@@ -25,7 +27,7 @@ const FloatingQRCode = () => {
               className="w-[200px] h-[300px] object-cover"
             />
           </div>
-          <p className="text-center mt-2 text-sm font-medium">扫码咨询</p>
+          <p className="text-center mt-2 text-sm font-medium">{t('qr.scanToConsult')}</p>
         </div>
       ) : (
         <Button 
