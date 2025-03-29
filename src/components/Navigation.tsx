@@ -27,10 +27,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useIsMobile } from '@/hooks/use-mobile';
+import {
+  Sheet,
+  SheetContent,
+  SheetClose,
+  SheetTrigger
+} from "@/components/ui/sheet";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const isMobile = useIsMobile();
@@ -42,11 +47,6 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location.pathname]);
 
   // Scroll to top when route changes
   useEffect(() => {
@@ -228,121 +228,107 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Now using Sheet from shadcn/ui */}
           <div className="md:hidden">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-foreground"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </Button>
-          </div>
-        </div>
-      </div>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="text-foreground"
+                >
+                  <Menu className="w-6 h-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="overflow-y-auto pt-12 w-full sm:max-w-md">
+                <div className="flex flex-col h-full pb-6">
+                  <div className="flex items-center justify-center mb-8">
+                    <img 
+                      src="/lovable-uploads/6486875d-ecb7-4cf9-8884-9eda54f7f55e.png" 
+                      alt="西江鼎科技" 
+                      className="h-12 w-auto" 
+                    />
+                  </div>
+                  
+                  <div className="space-y-1 mb-6">
+                    <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">
+                      {t('nav.services')}
+                    </div>
+                    {productItems.map((item) => (
+                      <SheetClose asChild key={item.href}>
+                        <Link 
+                          to={item.href}
+                          className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
+                        >
+                          <div className="font-medium">{item.title}</div>
+                          <div className="text-sm text-muted-foreground">{item.description}</div>
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
 
-      {/* Mobile Menu */}
-      <div className={cn(
-        "fixed inset-0 bg-background/95 backdrop-blur-sm z-40 md:hidden transition-transform duration-300 transform",
-        mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-      )}>
-        <div className="flex flex-col h-full pt-20 pb-6 px-4 overflow-y-auto">
-          <div className="absolute top-4 right-4">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-foreground"
-            >
-              <X className="w-6 h-6" />
-            </Button>
-          </div>
-          
-          <div className="flex items-center justify-center mb-8">
-            <img 
-              src="/lovable-uploads/6486875d-ecb7-4cf9-8884-9eda54f7f55e.png" 
-              alt="西江鼎科技" 
-              className="h-12 w-auto" 
-            />
-          </div>
-          
-          <div className="space-y-1 mb-6">
-            <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">
-              {t('nav.services')}
-            </div>
-            {productItems.map((item) => (
-              <Link 
-                key={item.href} 
-                to={item.href}
-                className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <div className="font-medium">{item.title}</div>
-                <div className="text-sm text-muted-foreground">{item.description}</div>
-              </Link>
-            ))}
-          </div>
+                  <div className="space-y-1 mb-6">
+                    <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">
+                      {t('nav.solutions')}
+                    </div>
+                    {solutionItems.map((item) => (
+                      <SheetClose asChild key={item.href}>
+                        <Link 
+                          to={item.href}
+                          className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
+                        >
+                          <div className="font-medium">{item.title}</div>
+                          <div className="text-sm text-muted-foreground">{item.description}</div>
+                        </Link>
+                      </SheetClose>
+                    ))}
+                  </div>
 
-          <div className="space-y-1 mb-6">
-            <div className="py-2 font-medium text-sm text-muted-foreground uppercase tracking-wider">
-              {t('nav.solutions')}
-            </div>
-            {solutionItems.map((item) => (
-              <Link 
-                key={item.href} 
-                to={item.href}
-                className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <div className="font-medium">{item.title}</div>
-                <div className="text-sm text-muted-foreground">{item.description}</div>
-              </Link>
-            ))}
-          </div>
+                  <div className="space-y-2">
+                    <SheetClose asChild>
+                      <Link 
+                        to="/about" 
+                        className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
+                      >
+                        {t('nav.about')}
+                      </Link>
+                    </SheetClose>
+                  </div>
 
-          <div className="space-y-2">
-            <Link 
-              to="/about" 
-              className="block py-2 px-3 rounded-md hover:bg-muted/80 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {t('nav.about')}
-            </Link>
-          </div>
-
-          <div className="mt-auto space-y-4">
-            <div className="grid grid-cols-2 gap-2">
-              <Button
-                variant={language === 'zh' ? 'default' : 'outline'}
-                className="w-full justify-center"
-                onClick={() => handleLanguageChange('zh')}
-              >
-                中文
-              </Button>
-              <Button
-                variant={language === 'en' ? 'default' : 'outline'}
-                className="w-full justify-center"
-                onClick={() => handleLanguageChange('en')}
-              >
-                English
-              </Button>
-            </div>
-            
-            <div className="grid grid-cols-2 gap-3">
-              <Button variant="outline" className="w-full justify-start">
-                <Phone className="w-4 h-4 mr-2" />
-                {t('common.phoneConsult')}
-              </Button>
-              <Button className="w-full justify-start">
-                <MessageSquare className="w-4 h-4 mr-2" />
-                {t('common.onlineConsult')}
-              </Button>
-            </div>
+                  <div className="mt-auto space-y-4">
+                    <div className="grid grid-cols-2 gap-2">
+                      <Button
+                        variant={language === 'zh' ? 'default' : 'outline'}
+                        className="w-full justify-center"
+                        onClick={() => handleLanguageChange('zh')}
+                      >
+                        中文
+                      </Button>
+                      <Button
+                        variant={language === 'en' ? 'default' : 'outline'}
+                        className="w-full justify-center"
+                        onClick={() => handleLanguageChange('en')}
+                      >
+                        English
+                      </Button>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-3">
+                      <Button variant="outline" className="w-full justify-start">
+                        <Phone className="w-4 h-4 mr-2" />
+                        {t('common.phoneConsult')}
+                      </Button>
+                      <SheetClose asChild>
+                        <Button className="w-full justify-start">
+                          <MessageSquare className="w-4 h-4 mr-2" />
+                          {t('common.onlineConsult')}
+                        </Button>
+                      </SheetClose>
+                    </div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
