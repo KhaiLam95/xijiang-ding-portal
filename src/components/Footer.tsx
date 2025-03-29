@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { 
@@ -79,7 +78,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 mr-3 text-muted-foreground" />
-                <span className="text-muted-foreground">+8618673556610</span>
+                <span className="text-muted-foreground">+86 18673556610</span>
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 text-muted-foreground" />

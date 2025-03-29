@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -55,7 +54,7 @@ const Contact = () => {
                       <h3 className="font-medium">
                         {language === 'zh' ? '电话' : 'Phone'}
                       </h3>
-                      <p className="text-muted-foreground">+8618673556610</p>
+                      <p className="text-muted-foreground">+86 18673556610</p>
                     </div>
                   </div>
                   

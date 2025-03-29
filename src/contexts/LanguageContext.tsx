@@ -1,4 +1,3 @@
-
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 type Language = 'zh' | 'en';
@@ -55,7 +54,7 @@ const translations = {
     'cta.title': '准备好开启数字化转型了吗？',
     'cta.description': '联系我们，了解西江鼎科技如何帮助您的企业实现创新发展，提升竞争力。我们的专业团队随时为您提供咨询和支持。',
     'cta.appointment': '预约咨询',
-    'cta.phone': '+8618673556610',
+    'cta.phone': '+86 18673556610',
     
     // QR Code
     'qr.scanToConsult': '扫码咨询',
@@ -138,7 +137,7 @@ const translations = {
     'cta.title': 'Ready to start your digital transformation?',
     'cta.description': 'Contact us to learn how Xijiang Tech can help your business innovate and improve competitiveness. Our professional team is ready to provide consultation and support.',
     'cta.appointment': 'Book a Consultation',
-    'cta.phone': '+8618673556610',
+    'cta.phone': '+86 18673556610',
     
     // QR Code
     'qr.scanToConsult': 'Scan to Consult',
