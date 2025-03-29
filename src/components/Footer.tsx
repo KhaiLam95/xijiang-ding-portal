@@ -47,7 +47,7 @@ const Footer = () => {
                 />
               </a>
               <a 
-                href="https://www.douyin.com/user/MS4wLjABAAAAgjmPdtfl8aY3ug4AmVV37U_F3TvWrPp9yymRXSJrHHzcGKyJRf7QJMvh4ziVY_UZ?from_tab_name=main" 
+                href="https://www.douyin.com/user/MS4wLjABAAAA5pGxOnAgCFTH6WXq1wHysSzsurIrZzzP76EUAG7thU4?from_tab_name=main" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors"
