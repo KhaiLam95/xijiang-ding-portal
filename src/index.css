@@ -125,6 +125,10 @@
   .animate-on-scroll {
     @apply opacity-0;
   }
+  
+  .animate-fade-in {
+    @apply opacity-100 transition-opacity duration-1000 ease-in-out;
+  }
 }
 
 /* Custom Scroll Bar */
