@@ -8,7 +8,6 @@ import {
   CarouselNext, 
   CarouselPrevious 
 } from "@/components/ui/carousel";
-import { Skeleton } from "@/components/ui/skeleton";
 
 interface LogoProps {
   name: string;
@@ -17,30 +16,17 @@ interface LogoProps {
 }
 
 const Logo = ({ name, logo, className }: LogoProps) => {
-  const [isLoading, setIsLoading] = React.useState(true);
-  const [hasError, setHasError] = React.useState(false);
-
   return (
     <div className={`flex h-16 w-full items-center justify-center transition-all duration-300 hover:scale-105 ${className}`}>
       <div className="flex h-16 w-full items-center justify-center rounded-lg bg-white px-4 shadow-sm">
-        {isLoading && !hasError && (
-          <Skeleton className="h-10 w-3/4" />
-        )}
-        {hasError ? (
-          <div className="text-sm text-muted-foreground">{name}</div>
-        ) : (
-          <img 
-            src={logo} 
-            alt={name} 
-            className={`h-12 w-auto object-contain ${isLoading ? 'hidden' : 'block'}`}
-            onLoad={() => setIsLoading(false)}
-            onError={() => {
-              setIsLoading(false);
-              setHasError(true);
-              console.error(`Failed to load image: ${logo}`);
-            }}
-          />
-        )}
+        <img 
+          src={logo} 
+          alt={name} 
+          className="h-12 w-auto object-contain"
+          onError={(e) => {
+            console.error(`Failed to load image: ${logo}`);
+          }}
+        />
       </div>
     </div>
   );
@@ -100,9 +86,6 @@ const ClientSection = () => {
       }
     };
   }, []);
-
-  // For debugging
-  console.log("Client logos:", clients.map(client => client.logo));
 
   return (
     <div className="border-y bg-muted/30 py-16">
