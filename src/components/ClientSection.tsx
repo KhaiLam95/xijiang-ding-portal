@@ -1,10 +1,17 @@
 
 import React, { useRef, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem, 
+  CarouselNext, 
+  CarouselPrevious 
+} from "@/components/ui/carousel";
 
 interface LogoProps {
   name: string;
-  logo?: string;
+  logo: string;
   className?: string;
 }
 
@@ -12,11 +19,7 @@ const Logo = ({ name, logo, className }: LogoProps) => {
   return (
     <div className={`flex h-16 w-full items-center justify-center transition-all duration-300 hover:scale-105 ${className}`}>
       <div className="flex h-16 w-full items-center justify-center rounded-lg bg-white px-4 shadow-sm">
-        {logo ? (
-          <img src={logo} alt={name} className="h-12 w-auto object-contain" />
-        ) : (
-          <span className="text-lg font-semibold text-foreground">{name}</span>
-        )}
+        <img src={logo} alt={name} className="h-12 w-auto object-contain" />
       </div>
     </div>
   );
@@ -28,27 +31,27 @@ const ClientSection = () => {
   const clients = [
     {
       name: language === 'zh' ? '华为' : 'Huawei',
-      logo: 'https://cdn.worldvectorlogo.com/logos/huawei-logo.svg'
+      logo: '/lovable-uploads/10024606-e18e-4d20-ba14-faa73f599651.png'
     },
     {
       name: language === 'zh' ? '特斯拉' : 'Tesla',
-      logo: 'https://cdn.worldvectorlogo.com/logos/tesla-9.svg'
+      logo: '/lovable-uploads/70ac1f4f-9d8f-4046-96d9-3da892f7d383.png'
     },
     {
       name: language === 'zh' ? '腾讯' : 'Tencent',
-      logo: 'https://cdn.worldvectorlogo.com/logos/tencent-logo.svg'
+      logo: '/lovable-uploads/7ccbd32e-5812-4049-8dd0-b1adb0ad758a.png'
     },
     {
       name: language === 'zh' ? '中山大学' : 'Sun Yat-sen University',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Sun_Yat-sen_University_Logo.svg/220px-Sun_Yat-sen_University_Logo.svg.png'
+      logo: '/lovable-uploads/1cd85a56-f924-43c7-b85f-4bd4ca5824d8.png'
     },
     {
       name: language === 'zh' ? '星海音乐学院' : 'Xinghai Conservatory of Music',
-      logo: ''
+      logo: '/lovable-uploads/e21e436a-a555-44e4-ab9e-94c9b0885018.png'
     },
     {
       name: language === 'zh' ? '抚州金叶' : 'Fuzhou Jinye',
-      logo: ''
+      logo: '/lovable-uploads/d4b3018b-9713-4311-8439-a472dc0bfff1.png'
     }
   ];
 
@@ -94,7 +97,8 @@ const ClientSection = () => {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3">
+        {/* Desktop view */}
+        <div className="mt-16 hidden md:grid grid-cols-3 gap-x-8 gap-y-10">
           {clients.map((client, index) => (
             <Logo 
               key={index} 
@@ -103,6 +107,27 @@ const ClientSection = () => {
               className="animate-on-scroll" 
             />
           ))}
+        </div>
+
+        {/* Mobile view with carousel */}
+        <div className="mt-12 md:hidden">
+          <Carousel className="w-full">
+            <CarouselContent>
+              {clients.map((client, index) => (
+                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                  <Logo 
+                    name={client.name} 
+                    logo={client.logo}
+                    className="animate-on-scroll px-4" 
+                  />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="flex justify-center gap-2 mt-4">
+              <CarouselPrevious className="static translate-y-0 transform-none" />
+              <CarouselNext className="static translate-y-0 transform-none" />
+            </div>
+          </Carousel>
         </div>
       </div>
     </div>

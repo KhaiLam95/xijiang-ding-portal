@@ -8,9 +8,16 @@ import ClientSection from '@/components/ClientSection';
 import TestimonialSection from '@/components/TestimonialSection';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to top when route changes
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   useEffect(() => {
     // Initialize intersection observer for animation on scroll
