@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { 
@@ -48,7 +47,7 @@ const Footer = () => {
                 />
               </a>
               <a 
-                href="#" 
+                href="https://www.douyin.com/user/MS4wLjABAAAAgjmPdtfl8aY3ug4AmVV37U_F3TvWrPp9yymRXSJrHHzcGKyJRf7QJMvh4ziVY_UZ?from_tab_name=main" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-muted-foreground hover:text-primary transition-colors"
