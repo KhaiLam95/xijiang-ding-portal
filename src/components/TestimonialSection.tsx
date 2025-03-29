@@ -24,76 +24,62 @@ const TestimonialSection = () => {
   
   const zhTestimonials: TestimonialProps[] = [
     {
-      quote: "西江鼎科技的AI解决方案帮助我们大幅提升了业务效率，他们的专业团队提供了全程的技术支持和指导。",
-      author: "张明",
-      role: "CTO",
-      company: "未来科技有限公司",
+      quote: "西江鼎科技的AI解决方案帮助我们大幅提升了业务效率，他们的专业团队提供了全程的技术支持和指导，新技术确实帮助我们节省了大量时间和成本。",
+      author: "王柯",
+      role: "运营总监",
+      company: "电商行业",
       avatarSrc: ""
     },
     {
-      quote: "我们与西江鼎的合作非常愉快，他们的定制软件解决方案完美满足了我们的业务需求，值得信赖的技术伙伴。",
-      author: "李华",
-      role: "CEO",
-      company: "智联科技集团",
+      quote: "西江鼎的数据分析服务令人印象深刻，他们具有出色的业务梳理洞察力，帮助我们这个传统公司进行数字化升级，用数据评估内外效率和决策，有效促进了业务增长。",
+      author: "石大牛",
+      role: "项目经理",
+      company: "建筑工程行业",
       avatarSrc: ""
     },
     {
-      quote: "西江鼎科技的技术团队专业且高效，他们的数据分析平台帮助我们发现了业务中的宝贵洞察，推动了业务的快速增长。",
-      author: "王芳",
-      role: "数据分析总监",
-      company: "鑫源金融",
+      quote: "西江鼎的软件定制服务非常专业，沟通服务非常顺畅，团队合作很周到，始终能理解我们的需求并提供合适的解决方案。",
+      author: "周子杰",
+      role: "创始人",
+      company: "互联网行业",
       avatarSrc: ""
     },
     {
-      quote: "作为长期合作伙伴，西江鼎科技一直为我们提供最前沿的技术支持，他们的创新能力和专业素养令人印象深刻。",
-      author: "赵强",
+      quote: "作为长期合作伙伴，西江鼎科技一直为我们提供最前沿的技术支持，他们不断结合新技术带来创新和支持，专业素养令人印象深刻。",
+      author: "赵广",
       role: "技术总监",
-      company: "星辰医疗",
-      avatarSrc: ""
-    },
-    {
-      quote: "西江鼎开发的教育平台大大提升了我们的教学效率和学生体验，他们对教育行业的深入理解使这次合作非常成功。",
-      author: "陈学",
-      role: "校长",
-      company: "明德教育集团",
+      company: "智慧农业",
       avatarSrc: ""
     }
   ];
   
   const enTestimonials: TestimonialProps[] = [
     {
-      quote: "Xijiang Tech's AI solutions have significantly improved our business efficiency, and their professional team provided comprehensive technical support and guidance.",
-      author: "Zhang Ming",
-      role: "CTO",
-      company: "Future Tech Co., Ltd.",
+      quote: "Xijiang Tech's AI solutions have significantly improved our business efficiency. Their professional team provided comprehensive technical support and guidance. The new technology has indeed helped us save a lot of time and costs.",
+      author: "Wang Ke",
+      role: "Operations Director",
+      company: "E-commerce Industry",
       avatarSrc: ""
     },
     {
-      quote: "Our collaboration with Xijiang has been very pleasant. Their custom software solutions perfectly met our business needs. They are a trustworthy technology partner.",
-      author: "Li Hua",
-      role: "CEO",
-      company: "Smart Tech Group",
+      quote: "Xijiang's data analysis service is impressive. They have excellent business insight, helping our traditional company upgrade digitally, using data to evaluate internal and external efficiency and decisions, effectively promoting business growth.",
+      author: "Shi Daniu",
+      role: "Project Manager",
+      company: "Construction Industry",
       avatarSrc: ""
     },
     {
-      quote: "Xijiang Tech's technical team is professional and efficient. Their data analysis platform helped us discover valuable insights in our business, driving rapid growth.",
-      author: "Wang Fang",
-      role: "Data Analytics Director",
-      company: "Xingyuan Finance",
+      quote: "Xijiang's custom software service is very professional. The communication service is very smooth, and the team cooperation is very thoughtful. They always understand our needs and provide appropriate solutions.",
+      author: "Zhou Zijie",
+      role: "Founder",
+      company: "Internet Industry",
       avatarSrc: ""
     },
     {
-      quote: "As a long-term partner, Xijiang Tech has always provided us with cutting-edge technical support. Their innovation capability and professionalism are impressive.",
-      author: "Zhao Qiang",
+      quote: "As a long-term partner, Xijiang Tech has always provided us with cutting-edge technical support. They constantly combine new technologies to bring innovation and support, and their professionalism is impressive.",
+      author: "Zhao Guang",
       role: "Technical Director",
-      company: "Xingchen Medical",
-      avatarSrc: ""
-    },
-    {
-      quote: "The education platform developed by Xijiang has greatly improved our teaching efficiency and student experience. Their deep understanding of the education industry made this collaboration very successful.",
-      author: "Chen Xue",
-      role: "Principal",
-      company: "Mingde Education Group",
+      company: "Smart Agriculture",
       avatarSrc: ""
     }
   ];

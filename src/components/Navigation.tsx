@@ -18,7 +18,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLanguage } from '@/contexts/LanguageContext';
 import {
   DropdownMenu,
@@ -26,11 +26,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const location = useLocation();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,6 +42,16 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // Scroll to top when route changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const productItems = [
     {
@@ -83,11 +96,11 @@ const Navigation = () => {
 
   const solutionItems = [
     {
-      title: t('solutions.fintech'),
+      title: t('solutions.digitalTourism'),
       description: language === 'zh' 
-        ? "为金融行业提供创新技术解决方案"
-        : "Innovative technology solutions for the financial industry",
-      href: "/solutions/fintech",
+        ? "为文旅行业提供数字化智能解决方案"
+        : "Digital intelligent solutions for the cultural tourism industry",
+      href: "/solutions/digital-tourism",
     },
     {
       title: t('solutions.healthcare'),
@@ -120,8 +133,8 @@ const Navigation = () => {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled 
-          ? "bg-white/80 dark:bg-background/80 backdrop-blur-xl border-b"
+        isScrolled || location.pathname !== "/" 
+          ? "bg-white/90 dark:bg-background/90 backdrop-blur-xl border-b"
           : "bg-transparent"
       )}
     >
@@ -239,6 +252,17 @@ const Navigation = () => {
         mobileMenuOpen ? "translate-x-0" : "translate-x-full"
       )}>
         <div className="flex flex-col h-full pt-20 pb-6 px-4 overflow-y-auto">
+          <div className="absolute top-4 right-4">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-foreground"
+            >
+              <X className="w-6 h-6" />
+            </Button>
+          </div>
+          
           <div className="flex items-center justify-center mb-8">
             <img 
               src="/lovable-uploads/6486875d-ecb7-4cf9-8884-9eda54f7f55e.png" 

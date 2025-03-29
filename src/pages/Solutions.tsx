@@ -6,30 +6,29 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import TestimonialSection from '@/components/TestimonialSection';
 
 const Solutions = () => {
   const { language } = useLanguage();
   
   const solutions = language === 'zh' ? [
     {
-      id: "fintech",
-      title: "金融科技",
-      description: "通过AI技术和数据分析，为金融机构提供智能风控、个性化服务和数字化转型解决方案。",
-      image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2000&auto=format&fit=crop",
-      path: "/solutions/fintech",
+      id: "digital-tourism",
+      title: "数智文旅",
+      description: "通过数字化技术和AI，为文化旅游行业提供智能运营、个性化服务和全面升级的解决方案。",
+      image: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=2000&auto=format&fit=crop",
+      path: "/solutions/digital-tourism",
       features: [
-        "智能风控与反欺诈系统",
-        "智能客户服务平台",
-        "量化交易与投资分析",
-        "金融数据可视化与分析"
+        "文旅数字内容创作与展示",
+        "智慧旅游服务平台",
+        "文化遗产数字化保护",
+        "旅游大数据分析"
       ]
     },
     {
       id: "healthcare",
       title: "医疗健康",
       description: "结合AI与大数据技术，提供智能诊断、远程医疗和健康管理平台，提升医疗服务效率和质量。",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=2000&auto=format&fit=crop",
       path: "/solutions/healthcare",
       features: [
         "医学影像辅助诊断系统",
@@ -42,7 +41,7 @@ const Solutions = () => {
       id: "education",
       title: "智慧教育",
       description: "打造智能化、个性化的教育平台，通过技术创新提升教学质量，为师生创造更优质的教育体验。",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop",
       path: "/solutions/education",
       features: [
         "智能学习平台",
@@ -55,7 +54,7 @@ const Solutions = () => {
       id: "smartcity",
       title: "智慧城市",
       description: "为城市管理者提供综合性的智慧城市解决方案，优化城市运营，提升市民生活质量。",
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2000&auto=format&fit=crop",
       path: "/solutions/smartcity",
       features: [
         "智慧交通系统",
@@ -66,23 +65,23 @@ const Solutions = () => {
     }
   ] : [
     {
-      id: "fintech",
-      title: "Fintech",
-      description: "Through AI technology and data analysis, we provide financial institutions with intelligent risk control, personalized services, and digital transformation solutions.",
-      image: "https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2000&auto=format&fit=crop",
-      path: "/solutions/fintech",
+      id: "digital-tourism",
+      title: "Digital Tourism",
+      description: "Through digital technology and AI, we provide intelligent operations, personalized services, and comprehensive upgrade solutions for the cultural tourism industry.",
+      image: "https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=2000&auto=format&fit=crop",
+      path: "/solutions/digital-tourism",
       features: [
-        "Intelligent Risk Control and Anti-Fraud System",
-        "Intelligent Customer Service Platform",
-        "Quantitative Trading and Investment Analysis",
-        "Financial Data Visualization and Analysis"
+        "Tourism Digital Content Creation and Display",
+        "Smart Tourism Service Platform",
+        "Digital Protection of Cultural Heritage",
+        "Tourism Big Data Analysis"
       ]
     },
     {
       id: "healthcare",
       title: "Healthcare",
       description: "Combining AI and big data technology to provide intelligent diagnosis, telemedicine, and health management platforms to improve healthcare service efficiency and quality.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=2000&auto=format&fit=crop",
       path: "/solutions/healthcare",
       features: [
         "Medical Imaging Assisted Diagnosis System",
@@ -95,7 +94,7 @@ const Solutions = () => {
       id: "education",
       title: "Smart Education",
       description: "Creating intelligent, personalized education platforms, improving teaching quality through technological innovation, creating a better educational experience.",
-      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop",
       path: "/solutions/education",
       features: [
         "Intelligent Learning Platform",
@@ -108,7 +107,7 @@ const Solutions = () => {
       id: "smartcity",
       title: "Smart City",
       description: "Providing comprehensive smart city solutions for city managers to optimize urban operations and improve citizens' quality of life.",
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2000&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1517976487492-5750f3195933?q=80&w=2000&auto=format&fit=crop",
       path: "/solutions/smartcity",
       features: [
         "Smart Transportation System",
@@ -177,8 +176,6 @@ const Solutions = () => {
             ))}
           </div>
         </div>
-        
-        <TestimonialSection />
       </main>
       <Footer />
     </div>

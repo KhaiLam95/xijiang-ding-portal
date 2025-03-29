@@ -24,7 +24,7 @@ const translations = {
     'services.data': '数据服务',
     
     // Solutions
-    'solutions.fintech': '金融科技',
+    'solutions.digitalTourism': '数智文旅',
     'solutions.healthcare': '医疗健康',
     'solutions.education': '智慧教育',
     'solutions.smartcity': '智慧城市',
@@ -34,7 +34,6 @@ const translations = {
     'footer.about': '关于我们',
     'footer.services': '产品服务',
     'footer.solutions': '解决方案',
-    'footer.careers': '加入我们',
     'footer.contact': '联系我们',
     'footer.contactUs': '联系我们',
     'footer.subscribe': '订阅我们',
@@ -56,7 +55,7 @@ const translations = {
     'cta.title': '准备好开启数字化转型了吗？',
     'cta.description': '联系我们，了解西江鼎科技如何帮助您的企业实现创新发展，提升竞争力。我们的专业团队随时为您提供咨询和支持。',
     'cta.appointment': '预约咨询',
-    'cta.phone': '400-888-8888',
+    'cta.phone': '+8618673556610',
     
     // QR Code
     'qr.scanToConsult': '扫码咨询',
@@ -108,7 +107,7 @@ const translations = {
     'services.data': 'Data Services',
     
     // Solutions
-    'solutions.fintech': 'Fintech',
+    'solutions.digitalTourism': 'Digital Tourism',
     'solutions.healthcare': 'Healthcare',
     'solutions.education': 'Education',
     'solutions.smartcity': 'Smart City',
@@ -118,7 +117,6 @@ const translations = {
     'footer.about': 'About Us',
     'footer.services': 'Services',
     'footer.solutions': 'Solutions',
-    'footer.careers': 'Careers',
     'footer.contact': 'Contact Us',
     'footer.contactUs': 'Contact Us',
     'footer.subscribe': 'Subscribe',
@@ -140,7 +138,7 @@ const translations = {
     'cta.title': 'Ready to start your digital transformation?',
     'cta.description': 'Contact us to learn how Xijiang Tech can help your business innovate and improve competitiveness. Our professional team is ready to provide consultation and support.',
     'cta.appointment': 'Book a Consultation',
-    'cta.phone': '400-888-8888',
+    'cta.phone': '+8618673556610',
     
     // QR Code
     'qr.scanToConsult': 'Scan to Consult',

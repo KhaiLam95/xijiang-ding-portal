@@ -13,11 +13,17 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const emailAddress = 'service@xjding.com';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Form submission logic would go here
     console.log({ name, email, message });
+  };
+
+  const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    window.location.href = `mailto:${emailAddress}`;
   };
 
   return (
@@ -49,7 +55,7 @@ const Contact = () => {
                       <h3 className="font-medium">
                         {language === 'zh' ? '电话' : 'Phone'}
                       </h3>
-                      <p className="text-muted-foreground">+86 400 888 8888</p>
+                      <p className="text-muted-foreground">+8618673556610</p>
                     </div>
                   </div>
                   
@@ -59,7 +65,13 @@ const Contact = () => {
                       <h3 className="font-medium">
                         {language === 'zh' ? '邮箱' : 'Email'}
                       </h3>
-                      <p className="text-muted-foreground">contact@xijiangding.com</p>
+                      <a 
+                        href={`mailto:${emailAddress}`} 
+                        onClick={handleEmailClick}
+                        className="text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {emailAddress}
+                      </a>
                     </div>
                   </div>
                   
@@ -71,30 +83,35 @@ const Contact = () => {
                       </h3>
                       <p className="text-muted-foreground">
                         {language === 'zh' 
-                          ? '中国北京市海淀区科技园区 100085' 
-                          : 'Technology Park, Haidian District, Beijing, China 100085'}
+                          ? '广东省广州市天河区棠东东南路10号中盛棠东汇南苑D202' 
+                          : 'Zhongsheng Tangdong Exchange South Garden D202, No. 10 Tangdong Southeast Road, Tianhe District, Guangzhou, Guangdong Province'}
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
               
-              {/* WeChat QR Code */}
+              {/* Zenon's QR Code */}
               <div>
                 <h2 className="text-2xl font-bold mb-4">
-                  {language === 'zh' ? '微信咨询' : 'WeChat Consultation'}
+                  {language === 'zh' ? '飞书咨询' : 'Feishu Consultation'}
                 </h2>
                 <p className="text-muted-foreground mb-4">
                   {language === 'zh' 
-                    ? '扫描下方二维码，添加我们的官方微信账号进行咨询。' 
-                    : 'Scan the QR code below to add our official WeChat account for consultation.'}
+                    ? '扫描下方二维码，添加Zenon为联系人进行咨询。' 
+                    : 'Scan the QR code below to add Zenon as a contact for consultation.'}
                 </p>
                 <div className="flex justify-center bg-white p-4 rounded-lg shadow-sm border w-fit">
-                  <img 
-                    src="https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?q=80&w=600"
-                    alt="WeChat QR Code" 
-                    className="w-48 h-48 object-cover"
-                  />
+                  <div className="flex flex-col items-center">
+                    <img 
+                      src="/lovable-uploads/57daf7d6-89e7-4a2d-b08c-885e2051dae8.png"
+                      alt="Zenon QR Code" 
+                      className="w-48 h-48 object-cover"
+                    />
+                    <p className="mt-2 text-sm text-center text-muted-foreground">
+                      {language === 'zh' ? '扫描二维码，添加我为联系人' : 'Scan QR code to add me as a contact'}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

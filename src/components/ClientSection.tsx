@@ -4,14 +4,19 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LogoProps {
   name: string;
+  logo?: string;
   className?: string;
 }
 
-const Logo = ({ name, className }: LogoProps) => {
+const Logo = ({ name, logo, className }: LogoProps) => {
   return (
-    <div className={`flex h-12 w-full items-center justify-center grayscale transition-all duration-300 hover:grayscale-0 ${className}`}>
-      <div className="flex h-10 w-40 items-center justify-center rounded-lg bg-muted/30 px-4">
-        <span className="text-lg font-semibold text-muted-foreground">{name}</span>
+    <div className={`flex h-16 w-full items-center justify-center transition-all duration-300 hover:scale-105 ${className}`}>
+      <div className="flex h-16 w-full items-center justify-center rounded-lg bg-white px-4 shadow-sm">
+        {logo ? (
+          <img src={logo} alt={name} className="h-12 w-auto object-contain" />
+        ) : (
+          <span className="text-lg font-semibold text-foreground">{name}</span>
+        )}
       </div>
     </div>
   );
@@ -20,10 +25,32 @@ const Logo = ({ name, className }: LogoProps) => {
 const ClientSection = () => {
   const { language } = useLanguage();
   
-  const zhLogos = ["华为", "阿里巴巴", "腾讯", "百度", "京东", "字节跳动", "小米", "网易", "美团", "滴滴"];
-  const enLogos = ["Huawei", "Alibaba", "Tencent", "Baidu", "JD", "ByteDance", "Xiaomi", "NetEase", "Meituan", "DiDi"];
-  
-  const logos = language === 'zh' ? zhLogos : enLogos;
+  const clients = [
+    {
+      name: language === 'zh' ? '华为' : 'Huawei',
+      logo: 'https://cdn.worldvectorlogo.com/logos/huawei-logo.svg'
+    },
+    {
+      name: language === 'zh' ? '特斯拉' : 'Tesla',
+      logo: 'https://cdn.worldvectorlogo.com/logos/tesla-9.svg'
+    },
+    {
+      name: language === 'zh' ? '腾讯' : 'Tencent',
+      logo: 'https://cdn.worldvectorlogo.com/logos/tencent-logo.svg'
+    },
+    {
+      name: language === 'zh' ? '中山大学' : 'Sun Yat-sen University',
+      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/5/59/Sun_Yat-sen_University_Logo.svg/220px-Sun_Yat-sen_University_Logo.svg.png'
+    },
+    {
+      name: language === 'zh' ? '星海音乐学院' : 'Xinghai Conservatory of Music',
+      logo: ''
+    },
+    {
+      name: language === 'zh' ? '抚州金叶' : 'Fuzhou Jinye',
+      logo: ''
+    }
+  ];
 
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -67,9 +94,14 @@ const ClientSection = () => {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
-          {logos.map((logo, index) => (
-            <Logo key={index} name={logo} className="animate-on-scroll" />
+        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-2 md:grid-cols-3">
+          {clients.map((client, index) => (
+            <Logo 
+              key={index} 
+              name={client.name} 
+              logo={client.logo}
+              className="animate-on-scroll" 
+            />
           ))}
         </div>
       </div>

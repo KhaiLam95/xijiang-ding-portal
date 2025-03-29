@@ -1,64 +1,51 @@
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Solutions from "./pages/Solutions";
-import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Index from './pages/Index';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Services from './pages/Services';
+import AIService from './pages/services/AIService';
+import SoftwareService from './pages/services/SoftwareService';
+import ConsultingService from './pages/services/ConsultingService';
+import DataService from './pages/services/DataService';
+import Solutions from './pages/Solutions';
+import DigitalTourismSolution from './pages/solutions/DigitalTourismSolution';
+import HealthcareSolution from './pages/solutions/HealthcareSolution';
+import EducationSolution from './pages/solutions/EducationSolution';
+import SmartCitySolution from './pages/solutions/SmartCitySolution';
+import NotFound from './pages/NotFound';
+import { LanguageProvider } from './contexts/LanguageContext';
+import FloatingQRCode from './components/FloatingQRCode';
 
-// Service detail pages
-import AIService from "./pages/services/AIService";
-import SoftwareService from "./pages/services/SoftwareService";
-import ConsultingService from "./pages/services/ConsultingService";
-import DataService from "./pages/services/DataService";
+import './App.css';
+import { Toaster } from './components/ui/toaster';
 
-// Solution detail pages
-import FintechSolution from "./pages/solutions/FintechSolution";
-import HealthcareSolution from "./pages/solutions/HealthcareSolution";
-import EducationSolution from "./pages/solutions/EducationSolution";
-import SmartCitySolution from "./pages/solutions/SmartCitySolution";
-
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
+function App() {
+  return (
     <LanguageProvider>
-      <TooltipProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/services/ai" element={<AIService />} />
+          <Route path="/services/software" element={<SoftwareService />} />
+          <Route path="/services/consulting" element={<ConsultingService />} />
+          <Route path="/services/data" element={<DataService />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/solutions/digital-tourism" element={<DigitalTourismSolution />} />
+          <Route path="/solutions/healthcare" element={<HealthcareSolution />} />
+          <Route path="/solutions/education" element={<EducationSolution />} />
+          <Route path="/solutions/smartcity" element={<SmartCitySolution />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <FloatingQRCode />
         <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/solutions" element={<Solutions />} />
-            <Route path="/contact" element={<Contact />} />
-            
-            {/* Service detail routes */}
-            <Route path="/services/ai" element={<AIService />} />
-            <Route path="/services/software" element={<SoftwareService />} />
-            <Route path="/services/consulting" element={<ConsultingService />} />
-            <Route path="/services/data" element={<DataService />} />
-            
-            {/* Solution detail routes */}
-            <Route path="/solutions/fintech" element={<FintechSolution />} />
-            <Route path="/solutions/healthcare" element={<HealthcareSolution />} />
-            <Route path="/solutions/education" element={<EducationSolution />} />
-            <Route path="/solutions/smartcity" element={<SmartCitySolution />} />
-            
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
+      </Router>
     </LanguageProvider>
-  </QueryClientProvider>
-);
+  );
+}
 
 export default App;

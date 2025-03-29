@@ -22,9 +22,9 @@ const FloatingQRCode = () => {
           </Button>
           <div className="pt-4">
             <img 
-              src="https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?q=80&w=600" 
-              alt="WeChat QR Code" 
-              className="w-[200px] h-[300px] object-cover"
+              src="/lovable-uploads/57daf7d6-89e7-4a2d-b08c-885e2051dae8.png" 
+              alt="Zenon QR Code" 
+              className="w-[200px] h-[200px] object-contain"
             />
           </div>
           <p className="text-center mt-2 text-sm font-medium">{t('qr.scanToConsult')}</p>
