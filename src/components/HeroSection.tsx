@@ -22,12 +22,14 @@ const HeroSection = () => {
             <span className="rounded-full bg-accent px-2 py-0.5 text-xs font-semibold text-white">
               {language === 'zh' ? '新上线' : 'New'}
             </span>
-            <span className="ml-2 text-muted-foreground">
-              {language === 'zh' 
-                ? '探索我们全新的人工智能解决方案' 
-                : 'Explore our new AI solutions'}
-            </span>
-            <ChevronRight className="ml-1 h-4 w-4 text-muted-foreground" />
+            <Link to="/services/ai" className="group">
+              <span className="ml-2 text-muted-foreground group-hover:text-primary transition-colors">
+                {language === 'zh' 
+                  ? '探索我们全新的人工智能解决方案' 
+                  : 'Explore our new AI solutions'}
+              </span>
+              <ChevronRight className="ml-1 inline-block h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:translate-x-0.5 transition-all" />
+            </Link>
           </div>
 
           <h1 className="mt-6 animate-fade-in-down text-center font-display text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
