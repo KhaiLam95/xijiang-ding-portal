@@ -52,27 +52,27 @@ const ClientSection = () => {
   const clients = [
     {
       name: language === 'zh' ? '华为' : 'Huawei',
-      logo: '/lovable-uploads/10024606-e18e-4d20-ba14-faa73f599651.png'
+      logo: '/lovable-uploads/e59f38e3-1713-4dee-ad13-2ad5d1b58250.png'
     },
     {
       name: language === 'zh' ? '特斯拉' : 'Tesla',
-      logo: '/lovable-uploads/70ac1f4f-9d8f-4046-96d9-3da892f7d383.png'
+      logo: '/lovable-uploads/b5c1f49d-b442-4995-9963-4d3311da8c65.png'
     },
     {
       name: language === 'zh' ? '腾讯' : 'Tencent',
-      logo: '/lovable-uploads/7ccbd32e-5812-4049-8dd0-b1adb0ad758a.png'
+      logo: '/lovable-uploads/60cd8e2a-7f50-49a2-b083-94737881a194.png'
     },
     {
       name: language === 'zh' ? '中山大学' : 'Sun Yat-sen University',
-      logo: '/lovable-uploads/1cd85a56-f924-43c7-b85f-4bd4ca5824d8.png'
+      logo: '/lovable-uploads/a4bc49da-c4e8-4a4f-b931-f681e3d3ab6f.png'
     },
     {
       name: language === 'zh' ? '星海音乐学院' : 'Xinghai Conservatory of Music',
-      logo: '/lovable-uploads/e21e436a-a555-44e4-ab9e-94c9b0885018.png'
+      logo: '/lovable-uploads/73aef3c5-1484-4478-8393-0df5744ed5de.png'
     },
     {
       name: language === 'zh' ? '抚州金叶' : 'Fuzhou Jinye',
-      logo: '/lovable-uploads/d4b3018b-9713-4311-8439-a472dc0bfff1.png'
+      logo: '/lovable-uploads/a8b3d303-9e5d-4c1e-8531-b3c47fd8e6f5.png'
     }
   ];
 
